@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alibaba Clothing</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- GSAP for advanced animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+
+<body class="bg-[#F4F2EB] overflow-x-hidden">
+  <!-- navbar start (Lower z-index than sidebar) -->
+  <nav
+    class="flex justify-between items-center px-5 2xl:px-20 lg:px-10 py-5 xl:py-11 lg:py-9 shadow-md z-50 relative bg-[#F4F2EB]">
+
+    <!-- LEFT MENU (Now holds the hamburger toggle) -->
+    <div class="block">
+      <!-- TOGGLE BUTTON -->
+      <button class="" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+
+    <!-- LOGO -->
+    <a href="index.html">
+      <div class="text-2xl lg:text-3xl font-bold text-[#1E1E1E] uppercase tracking-wider">ALIBABA CLOTHING</div>
+    </a>
+
+    <!-- ICONS -->
+    <div class="">
+      <div class="lg:block hidden lg:flex items-center xl:gap-5 gap-3">
+        <a href="">
+          <span><img src="./assets/img/user.png" alt=""></span>
+        </a>
+        <a href="">
+          <span><img src="./assets/img/shopping bag.png" alt=""></span>
+        </a>
+      </div>
+      <!-- TOGGLE BUTTON REMOVED FROM HERE -->
+    </div>
+
+    <!-- MENU & OVERLAY MOVED TO BOTTOM OF BODY -->
+
+  </nav>
+  <!-- end navbar  -->
+
+  <!-- hero section  -->
+  <section>
+    <div class="2xl:px-20 lg:px-10 px-5">
+      <div class="text-center pt-24">
+        <div>
+          <h1 id="animatedText"
+            class="2xl:text-8xl lg:text-5xl text-4xl font-normal text-[#1E1E1E] tracking-wide overflow-hidden">
+            MODERN FASHION HOUSE
+          </h1>
+
+        </div>
+        <div class="pt-9 hero-desc">
+          <p class="2xl:text-2xl text-xl 2xl:leading-[46px] leading-9 font-normal text-[#666666]">Contemporary style
+            defined
+            by elegance, comfort, and timeless sophistication — pieces that carry quiet character
+            and a sense of purpose in every
+            detail.</p>
+        </div>
+      </div>
+      <div class="flex justify-center pt-12">
+        <div class="flex gap-4">
+          <a href="" class="hero-btn inline-block">
+            <p
+              class="flex items-center gap-[11px] pl-6 pr-1 py-1 rounded-full bg-[#1E1E1E] text-[#EBE9E3] 2xl:text-xl text-sm font-medium transition-transform hover:scale-105 duration-300">
+              Shop Now
+              <span
+                class="flex items-center justify-center 2xl:w-11 w-9 2xl:h-11 h-9 rounded-full bg-[#EBE9E3] text-[#1E1E1E]">
+                <img src="./assets/img/nshopping bag.png" class="w-5" alt=""></i>
+              </span>
+            </p>
+          </a>
+          <a href="" class="hero-btn inline-block">
+            <p
+              class="flex items-center gap-[11px] pl-6 pr-1 py-1 rounded-full bg-[#EBE9E3] text-[#1E1E1E] 2xl:text-xl text-sm font-medium hover:bg-[#1E1E1E] hover:text-[#EBE9E3] transition-all hover:scale-105 duration-300">
+              Workshop
+              <span
+                class="flex items-center justify-center 2xl:w-11 w-9 2xl:h-11 h-9 rounded-full bg-[#F4F2EB] text-[#1E1E1E]">
+                <i class="fa-solid fa-arrow-down rotate-[216deg] 2xl:text-2xl text-xl text-[#1E1E1E] "></i>
+              </span>
+            </p>
+          </a>
+
+        </div>
+
+      </div>
+      <div class="lg:flex md:grid grid-cols-3 md:gap-2 lg:gap-3 justify-between  pt-12">
+        <div class="hero-img"> <!-- removed old animate class -->
+          <img src="./assets/img/hero_woman.png" alt="Stylish Woman" class="w-full h-full object-cover rounded-lg">
+        </div>
+        <div>
+          <div class="md:pt-0 pt-5 hero-img">
+            <img src="./assets/img/hero_man.png" alt="Stylish Man" class="w-full object-cover rounded-lg">
+          </div>
+          <div class="2xl:pt-5 pt-4 lg:pt-3 md:pt-2 hero-img">
+            <img src="./assets/img/hero_tall_2.jpg" alt="" class="w-full object-cover rounded-lg">
+          </div>
+        </div>
+        <div class="md:pt-0 pt-5 hero-img">
+          <img src="./assets/img/hero_tall_3.jpg" alt="" class="w-full h-full object-cover rounded-lg">
+        </div>
+      </div>
+      <div class="bg-[#D6D6D6] w-full h-[1px] xl:my-24 my-16
+         origin-center scale-x-0
+         transition-transform duration-[2200ms]
+         ease-[cubic-bezier(0.16,1,0.3,1)]
+         line-animate">
+      </div>
+
+
+    </div>
+  </section>
+  <!-- end section  -->
+
+  <!-- SHOP BY CATEGORY -->
+  <section>
+    <div class="2xl:px-20 lg:px-10 px-5 pt-24">
+      <div class="flex flex-col lg:flex-row gap-10 items-center section-reveal">
+        <!-- Title Left -->
+        <div class="lg:w-[25%] text-center lg:text-left">
+          <h2 class="2xl:text-[50px] text-4xl font-normal text-[#1E1E1E] uppercase leading-tight">
+            SHOP BY <br> CATEGORY
+          </h2>
+        </div>
+
+        <!-- Grid Right -->
+        <div class="lg:w-[75%] w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- MEN -->
+            <div class="group cursor-pointer">
+              <div class="overflow-hidden rounded-lg relative">
+                <img src="./assets/img/men_category.png" alt="Men"
+                  class="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+              </div>
+              <h3
+                class="mt-5 text-2xl font-medium text-[#1E1E1E] text-center group-hover:text-[#666666] transition-colors">
+                MEN</h3>
+            </div>
+
+            <!-- WOMEN -->
+            <div class="group cursor-pointer">
+              <div class="overflow-hidden rounded-lg relative">
+                <!-- Using hero image as placeholder for Women -->
+                <img src="./assets/img/hero_tall_2.jpg" alt="Women"
+                  class="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+              </div>
+              <h3
+                class="mt-5 text-2xl font-medium text-[#1E1E1E] text-center group-hover:text-[#666666] transition-colors">
+                WOMEN</h3>
+            </div>
+
+            <!-- KIDS -->
+            <div class="group cursor-pointer">
+              <div class="overflow-hidden rounded-lg relative">
+                <img src="./assets/img/kids_category.png" alt="Kids"
+                  class="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+              </div>
+              <h3
+                class="mt-5 text-2xl font-medium text-[#1E1E1E] text-center group-hover:text-[#666666] transition-colors">
+                KIDS</h3>
+            </div>
+
+            <!-- CLEARANCE -->
+            <div class="group cursor-pointer">
+              <div class="overflow-hidden rounded-lg relative">
+                <img src="./assets/img/accessories_bag.jpg" alt="Clearance"
+                  class="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+              </div>
+              <h3
+                class="mt-5 text-2xl font-medium text-[#1E1E1E] text-center group-hover:text-[#666666] transition-colors">
+                ACCESSORIES</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#D6D6D6] w-full h-[1px] xl:my-24 my-16
+         origin-center scale-x-0
+         transition-transform duration-[2200ms]
+         ease-[cubic-bezier(0.16,1,0.3,1)]
+         line-animate">
+      </div>
+    </div>
+  </section>
+  <!-- end shop by category -->
+
+  <!-- About Alibaba Clothing  -->
+  <section>
+    <div class="text-center bg-[#EBE9E3] 2xl:px-20 lg:px-10 px-5 pb-24">
+      <div class="bg-[#F4F2EB] px-9 py-2 mt-24 rounded-full inline-block section-reveal">
+        <h3 id="wordScrollAnimate" class="2xl:text-3xl text-xl font-medium text-[#1E1E1E]">
+          ABOUT ALIBABA CLOTHING
+        </h3>
+
+      </div>
+      <div class="pt-12 section-reveal">
+        <h2
+          class=" 2xl:text-7xl xl:text-6xl lg:text-4xl text-2xl 2xl:leading-[108px] xl:leading-[90px] lg:leading-[52px] leading-10 font-light text-[#666666] max-w-full">
+          <span class="text-[#1E1E1E]">We specialize in premium apparel</span> and design. We have <br
+            class="2xl:block hidden"> worked with clients in various industries such as <br class="2xl:block hidden">
+          finance, publishing, <span class="text-[#1E1E1E]">fashion, music, arts and culture.</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- end section -->
+
+  <!-- NEW ARRIVALS  -->
+  <section>
+    <div class="2xl:px-20 lg:px-10 px-5">
+      <div class="bg-[#D6D6D6] w-full h-[1px] xl:my-24 my-16
+         origin-center scale-x-0
+         transition-transform duration-[2200ms]
+         ease-[cubic-bezier(0.16,1,0.3,1)]
+         line-animate">
+      </div>
+
+
+      <div class="lg:flex justify-between 2xl:gap-0 xl:gap-8 gap-0 lg:text-start text-center section-reveal">
+        <div>
+          <h2 class="2xl:text-[80px] lg:text-4xl text-3xl
+            font-normal text-[#1E1E1E]">
+            CLOTHING
+          </h2>
+
+
+        </div>
+        <div class="lg:pt-0 pt-4">
+          <p class="2xl:text-2xl xl:text-2xl lg:text-lg text-xl
+          2xl:leading-[46px] leading-8 font-normal text-[#666666]">
+            explore our exclusive collection for men, kids, and accessories, crafted with
+            <br class="lg:block hidden">
+            elegance and style in mind.
+          </p>
+
+        </div>
+      </div>
+      <div class="lg:flex justify-between md:grid grid-cols-3 md:gap-5 gap-0 items-center pt-20 product-grid">
+        <div class="text-center product-card group">
+          <div class="overflow-hidden"> <!-- Added overflow hidden for scale effect -->
+            <img src="./assets/img/men_category.png" alt=""
+              class="transition-transform duration-700 group-hover:scale-110 w-full object-cover aspect-[3/4]">
+          </div>
+          <div class="pt-5">
+            <h2 class="xl:text-2xl text-xl font-medium text-[#1E1E1E]">MEN</h2>
+          </div>
+          <div class="pt-1">
+            <p class="xl:text-lg text-sm xl:leading-8 leading-6 font-normal text-[#666666]">sophisticated styles for the
+              modern gentleman.</p>
+          </div>
+          <a href="" class="inline-block w-full">
+            <div class="xl:py-4 py-2 bg-[#1E1E1E] mt-5
+            transition-all duration-300
+            hover:shadow-2xl hover:-translate-y-1">
+
+              <h2 class="xl:text-xl text-lg font-medium
+              text-[#EBE9E3]">
+                VIEW COLLECTION
+              </h2>
+
+            </div>
+
+          </a>
+
+        </div>
+        <div class="text-center lg:pt-0 md:pt-0 pt-5 product-card group">
+          <div class="overflow-hidden">
+            <img src="./assets/img/kids_category.png" alt=""
+              class="transition-transform duration-700 group-hover:scale-110 w-full object-cover aspect-[3/4]">
+          </div>
+          <div class="pt-5">
+            <h2 class="xl:text-2xl text-xl font-medium text-[#1E1E1E]">KIDS</h2>
+          </div>
+          <div class="pt-1">
+            <p class="xl:text-lg text-sm xl:leading-8 leading-6 font-normal text-[#666666]">playful yet elegant designs
+              for little ones.</p>
+          </div>
+          <a href="" class="inline-block w-full">
+            <div class="xl:py-4 py-2 bg-[#1E1E1E] mt-5
+            transition-all duration-300
+            hover:shadow-2xl hover:-translate-y-1">
+
+              <h2 class="xl:text-xl text-lg font-medium
+              text-[#EBE9E3]">
+                VIEW COLLECTION
+              </h2>
+
+            </div>
+          </a>
+        </div>
+        <div class="text-center lg:pt-0 md:pt-0 pt-5 product-card group">
+          <div class="overflow-hidden">
+            <img src="./assets/img/accessories_bag.jpg" alt=""
+              class="transition-transform duration-700 group-hover:scale-110 w-full object-cover aspect-[3/4]">
+          </div>
+          <div class="pt-5">
+            <h2 class="xl:text-2xl text-xl font-medium text-[#1E1E1E]">ACCESSORIES</h2>
+          </div>
+          <div class="pt-1">
+            <p class="xl:text-lg text-sm xl:leading-8 leading-6 font-normal text-[#666666]">perfect finishing touches to
+              complete your look.</p>
+          </div>
+          <a href="" class="inline-block w-full">
+            <div class="xl:py-4 py-2 bg-[#1E1E1E] mt-5
+            transition-all duration-300
+            hover:shadow-2xl hover:-translate-y-1">
+
+              <h2 class="xl:text-xl text-lg font-medium
+              text-[#EBE9E3]">
+                VIEW COLLECTION
+              </h2>
+
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section  -->
+
+  <!-- last section  -->
+  <section>
+    <div class="lg:pt-36 pt-24 lg:pb-48 pb-24 2xl:px-28 lg:px-10 px-5">
+      <div class="text-center">
+        <div>
+          <h2 class="2xl:text-[60px] text-2xl font-bold text-[#1E1E1E]">Fashion Journal</h2>
+        </div>
+        <div class="pt-5">
+          <p class="2xl:text-lg text-base 2xl:leading-9 leading-8 font-medium text-[#666666]">Discover The Latest
+            Trends, Expert Tips, And Stories Behind Our Creations. Our Blog Is Designed To Inspire, Educate, And Connect
+            You With The <br class="xl:block hidden"> World Of Timeless Elegance And Modern Design.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-28 blog-grid">
+
+        <!-- CARD 1: MEN -->
+        <div class="flex flex-col lg:flex-row gap-5 blog-card group cursor-pointer">
+          <div class="lg:w-1/2 w-full overflow-hidden">
+            <img src="./assets/img/blog_men.png"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Men's Fashion">
+          </div>
+          <div class="lg:w-1/2 w-full flex flex-col justify-between">
+            <h2
+              class="font-bold text-lg lg:text-xl 2xl:text-2xl text-[#1E1E1E] group-hover:text-gray-600 transition-colors">
+              Men's Style Guide
+            </h2>
+            <p class="mt-4 text-sm lg:text-base leading-7 text-[#666666]">
+              Discover the essential pieces for a versatile modern wardrobe. From sharp tailoring to casual elevated
+              basics, redefine your everyday look.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 2: WOMEN -->
+        <div class="flex flex-col lg:flex-row gap-5 blog-card group cursor-pointer">
+          <div class="lg:w-1/2 w-full overflow-hidden">
+            <img src="./assets/img/blog_women.png"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Women's Fashion">
+          </div>
+          <div class="lg:w-1/2 w-full flex flex-col justify-between">
+            <h2
+              class="font-bold text-lg lg:text-xl 2xl:text-2xl text-[#1E1E1E] group-hover:text-gray-600 transition-colors">
+              Women's Trends
+            </h2>
+            <p class="mt-4 text-sm lg:text-base leading-7 text-[#666666]">
+              Explore the season's most captivating trends. Elegant silhouettes, luxurious fabrics, and styling tips to
+              express your unique sophistication.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 3: KIDS -->
+        <div class="flex flex-col lg:flex-row gap-5 xl:pt-12 lg:pt-6 blog-card group cursor-pointer">
+          <div class="lg:w-1/2 w-full overflow-hidden">
+            <img src="./assets/img/blog_kids.png"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Kids' Fashion">
+          </div>
+          <div class="lg:w-1/2 w-full flex flex-col justify-between">
+            <h2
+              class="font-bold text-lg lg:text-xl 2xl:text-2xl text-[#1E1E1E] group-hover:text-gray-600 transition-colors">
+              Kids' Collection
+            </h2>
+            <p class="mt-4 text-sm lg:text-base leading-7 text-[#666666]">
+              Comfort meets style for the little ones. Durable, playful, and fashionable outfits designed for their
+              biggest adventures.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 4: ACCESSORIES -->
+        <div class="flex flex-col lg:flex-row gap-5 xl:pt-12 lg:pt-6 blog-card group cursor-pointer">
+          <div class="lg:w-1/2 w-full overflow-hidden">
+            <img src="./assets/img/blog_accessories.png"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Accessories">
+          </div>
+          <div class="lg:w-1/2 w-full flex flex-col justify-between">
+            <h2
+              class="font-bold text-lg lg:text-xl 2xl:text-2xl text-[#1E1E1E] group-hover:text-gray-600 transition-colors">
+              Essential Accessories
+            </h2>
+            <p class="mt-4 text-sm lg:text-base leading-7 text-[#666666]">
+              The finishing touches that matter. Elevate any ensemble with our curated selection of bags, jewelry, and
+              footwear.
+            </p>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </section>
+  <!-- end section  -->
+
+
+
+
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+  <footer class="bg-[#1E1E1E] text-[#EBE9E3] pt-20 pb-10" data-aos="fade-up" data-aos-offset="0">
+    <div class="2xl:px-20 lg:px-10 px-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Brand -->
+        <div>
+          <h2 class="text-3xl font-medium mb-6">ALIBABA CLOTHING</h2>
+          <p class="text-[#999999] leading-relaxed">
+            Contemporary style defined by elegance, comfort, and timeless sophistication.
+          </p>
+        </div>
+
+        <!-- Shop -->
+        <div>
+          <h3 class="text-lg font-bold uppercase tracking-widest mb-6">Shop</h3>
+          <ul class="flex flex-col gap-4 text-[#999999]">
+            <li><a href="shop.html" class="hover:text-white transition-colors">Men's Collection</a></li>
+            <li><a href="shop.html" class="hover:text-white transition-colors">Women's Collection</a></li>
+            <li><a href="shop.html" class="hover:text-white transition-colors">Kids' Collection</a></li>
+            <li><a href="shop.html" class="hover:text-white transition-colors">Accessories</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h3 class="text-lg font-bold uppercase tracking-widest mb-6">Support</h3>
+          <ul class="flex flex-col gap-4 text-[#999999]">
+            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Shipping & Returns</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Size Guide</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-bold uppercase tracking-widest mb-6">Newsletter</h3>
+          <p class="text-[#999999] mb-4">Subscribe to receive updates, access to exclusive deals, and more.</p>
+          <form class="flex flex-col gap-3">
+            <input type="email" placeholder="Enter your email"
+              class="bg-transparent border border-[#333333] text-white px-4 py-3 focus:outline-none focus:border-white transition-colors">
+            <button
+              class="bg-[#EBE9E3] text-[#1E1E1E] font-bold uppercase tracking-wide py-3 hover:bg-white transition-colors">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-[#333333] pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[#999999] text-sm">&copy; 2025 ALIBABA CLOTHING. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-[#999999] hover:text-white transition-colors"><i
+              class="fa-brands fa-instagram text-xl"></i></a>
+          <a href="#" class="text-[#999999] hover:text-white transition-colors"><i
+              class="fa-brands fa-facebook-f text-xl"></i></a>
+          <a href="#" class="text-[#999999] hover:text-white transition-colors"><i
+              class="fa-brands fa-twitter text-xl"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- OVERLAY BACKDROP (High z-index) -->
+  <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-[150] hidden opacity-0 transition-opacity duration-300"
+    onclick="toggleMenu()">
+  </div>
+
+  <!-- MOBILE MENU (DRAWER STYLE - COVERS NAVBAR) -->
+  <div id="mobileMenu"
+    class="fixed top-0 left-0 h-full w-[85%] md:w-[400px] bg-white shadow-2xl transition-transform duration-500 transform -translate-x-full z-[200]">
+
+    <!-- DRAWER HEADER (Logo + Close Button) -->
+    <div class="flex justify-between items-center p-6 border-b border-gray-100">
+      <!-- Logo inside drawer -->
+      <!-- Logo inside drawer -->
+      <div class="text-xl font-bold text-[#1E1E1E] uppercase">ALIBABA CLOTHING</div>
+
+      <button onclick="toggleMenu()" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+        <i class="fa-solid fa-xmark text-2xl text-[#1E1E1E]"></i>
+      </button>
+    </div>
+
+    <!-- DRAWER CONTENT -->
+    <div class="p-6 overflow-y-auto h-[calc(100%-80px)]">
+      <ul class="flex flex-col gap-6 items-center text-center">
+
+        <!-- SHOP -->
+        <li><a href="shop.html">Shop</a></li>
+
+        <!-- WORKSHOPS -->
+        <li><a href="#">Workshops</a></li>
+
+        <li><a href="">Gallery & About</a></li>
+        <li><a href="">Blog</a></li>
+
+        <div class="flex items-center gap-5">
+          <a href="">
+            <span><img src="./assets/img/user.png" alt=""></span>
+          </a>
+          <a href="">
+            <span><img src="./assets/img/shopping bag.png" alt=""></span>
+          </a>
+        </div>
+      </ul>
+
+
+    </div> <!-- End Drawer Content -->
+  </div>
+
+  <!-- toggle button  -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const overlay = document.getElementById("menuOverlay");
+      const body = document.body;
+
+      // Toggle Drawer Transform
+      menu.classList.toggle("-translate-x-full");
+
+      // Toggle Overlay
+      if (menu.classList.contains("-translate-x-full")) {
+        // Closing
+        overlay.classList.add("opacity-0");
+        setTimeout(() => overlay.classList.add("hidden"), 300); // wait for fade out
+        body.classList.remove("overflow-hidden"); // Enable scroll
+      } else {
+        // Opening
+        overlay.classList.remove("hidden");
+        // small delay to allow display:block to apply before opacity transition
+        setTimeout(() => overlay.classList.remove("opacity-0"), 10);
+        body.classList.add("overflow-hidden"); // Disable scroll
+      }
+    }
+  </script>
+
+
+  <!-- dropmenu  -->
+  <script>
+    function toggleDropdown(id) {
+      // sab dropdown menus select karo
+      const menus = document.querySelectorAll("ul[id$='Menu']");
+
+      menus.forEach(menu => {
+        if (menu.id !== id) {
+          menu.classList.add("hidden"); // baqi sab band
+        }
+      });
+
+      // jis par click hua usko toggle karo
+      document.getElementById(id).classList.toggle("hidden");
+    }
+  </script>
+
+
+  <!-- mobile drop menu  -->
+  <script>
+    function toggleMobile(id) {
+      const menu = document.getElementById(id);
+      const icon = document.getElementById(id + "Icon");
+
+      // toggle current menu
+      menu.classList.toggle("hidden");
+      icon.classList.toggle("rotate-90");
+    }
+  </script>
+
+
+
+  <!-- GSAP & AOS Animation Initialization -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
+    });
+
+    // Register GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // --- HEADER ANIMATION ---
+      gsap.from("nav", {
+        y: -100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      // --- HERO SECTION ---
+      const heroTl = gsap.timeline();
+
+      // Animate Hero H1 Words
+      const heroText = document.getElementById("animatedText");
+      if (heroText) {
+        // Wrap words/chars logic if needed, but for now simple reveal
+        gsap.fromTo(heroText,
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, delay: 0.5, ease: "power3.out" }
+        );
+      }
+
+      // Hero Description & Buttons
+      gsap.from(".hero-desc", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        delay: 0.8,
+        ease: "power2.out"
+      });
+
+      gsap.from(".hero-btn", {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        delay: 1,
+        ease: "back.out(1.7)"
+      });
+
+      // Hero Images Parallax / Slide
+      gsap.utils.toArray(".hero-img").forEach((img, i) => {
+        gsap.from(img, {
+          y: 50,
+          opacity: 0,
+          duration: 1.2,
+          delay: 1.2 + (i * 0.15),
+          ease: "power3.out"
+        });
+      });
+
+
+      // --- DIVIDER LINES ---
+      // Animate all lines with class 'line-animate'
+      gsap.utils.toArray(".line-animate").forEach(line => {
+        gsap.fromTo(line,
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            duration: 1.5,
+            ease: "expo.out",
+            scrollTrigger: {
+              trigger: line,
+              start: "top 85%",
+            }
+          }
+        );
+      });
+
+      // --- SECTION TITLES & TEXT ---
+      // Generic fade-up for section headers
+      gsap.utils.toArray(".section-reveal").forEach(elem => {
+        gsap.from(elem, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: elem,
+            start: "top 85%",
+          }
+        });
+      });
+
+
+      // --- PRODUCT CARDS STAGGER ---
+      // We need to add a common class to product cards or target them by structure
+      gsap.from(".product-card", {
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".product-grid", // Need to add this class to the parent
+          start: "top 80%",
+        }
+      });
+
+
+      // --- BLOG CARDS STAGGER ---
+      gsap.from(".blog-card", {
+        x: -30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.25,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".blog-grid",
+          start: "top 85%",
+        }
+      });
+
+    });
+  </script>
+  <!-- end animation script -->
+
+
+</body>
+
+</html>
